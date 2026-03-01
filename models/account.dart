@@ -38,10 +38,6 @@ abstract class Account {
     return _balance;
   }
 
-  void deduct(double amount) {
-    _balance -= amount;
-  }
-
   void addInterest(double interest) {
     _balance += interest;
   }
