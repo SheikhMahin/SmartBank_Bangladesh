@@ -1,5 +1,7 @@
 import 'account.dart';
 
+const double defaultInterestRate = 0.10;
+
 class FixedDepositAccount extends Account {
   final DateTime openingDate;
   final Duration maturityPeriod = Duration(days: 365);
@@ -7,10 +9,10 @@ class FixedDepositAccount extends Account {
   FixedDepositAccount(
     String accountNumber,
     String accountHolderName,
-    double balance,
-    double interestRate,
-  ) : openingDate = DateTime.now(),
-      super(accountNumber, accountHolderName, balance, 0.10);
+    double balance, {
+    DateTime? customOpeningDate,
+  }) : openingDate = customOpeningDate ?? DateTime.now(),
+       super(accountNumber, accountHolderName, balance, defaultInterestRate);
 
   bool isMatured() {
     return DateTime.now().difference(openingDate) >= maturityPeriod;

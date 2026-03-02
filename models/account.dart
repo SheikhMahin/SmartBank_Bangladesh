@@ -41,4 +41,8 @@ abstract class Account {
   void addInterest(double interest) {
     _balance += interest;
   }
+
+  double getInterestRate() {
+    return interestRate;
+  }
 }

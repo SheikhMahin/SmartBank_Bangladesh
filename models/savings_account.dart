@@ -1,12 +1,10 @@
 import 'account.dart';
 
+final double defaultInterestRate = 0.05;
+
 class SavingsAccount extends Account {
-  SavingsAccount(
-    String accountNumber,
-    String accountHolderName,
-    double balance,
-    double interestRate,
-  ) : super(accountNumber, accountHolderName, balance, 0.05);
+  SavingsAccount(String accountNumber, String accountHolderName, double balance)
+    : super(accountNumber, accountHolderName, balance, defaultInterestRate);
 
   @override
   void withdraw(double amount) {
@@ -29,5 +27,10 @@ class SavingsAccount extends Account {
     print(
       "Interest of $interest Tk added to ${accountHolderName}'s savings account",
     );
+  }
+
+  @override
+  double getInterestRate() {
+    return interestRate;
   }
 }
