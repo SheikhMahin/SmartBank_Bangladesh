@@ -1,8 +1,12 @@
 import 'account.dart';
 
 class SavingsAccount extends Account {
-  SavingsAccount(String accountNumber, String accountHolderName, double balance)
-    : super(accountNumber, accountHolderName, balance, 5.0);
+  SavingsAccount(
+    String accountNumber,
+    String accountHolderName,
+    double balance,
+    double interestRate,
+  ) : super(accountNumber, accountHolderName, balance, 0.05);
 
   @override
   void withdraw(double amount) {
